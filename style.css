@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* 确保字体已导入或为系统字体 */
+    font-family: '汉仪尚巍手书', 'Microsoft YaHei', sans-serif;
+    /* 调整背景渐变，增加深度 */
+    background: linear-gradient(135deg, #c70012 0%, #DB2A2D 50%, #c70012 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    perspective: 1000px;
+    overflow: hidden;
+    position: relative;
+}
+
+.container {
+    text-align: center;
+    padding: 3rem; /* 增加内边距 */
+    background-color: rgba(10, 10, 26, 0.7); /* 稍微增加背景透明度 */
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(255, 215, 0, 0.3); /* 调整阴影效果 */
+    backdrop-filter: blur(15px); /* 增加模糊度 */
+    transform-style: preserve-3d;
+    animation: hologram 3s infinite;
+    border: 2px solid rgba(255, 215, 0, 0.5); /* 添加金色边框 */
+}
+
+.title {
+    font-size: 3rem; /* 增加标题字号 */
+    margin-bottom: 2.5rem; /* 调整下边距 */
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4); /* 调整文字阴影 */
+    color: #FFD700; /* 设置标题颜色为金色 */
+}
+
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem; /* 增加倒计时项之间的间距 */
+    margin-bottom: 3rem; /* 调整下边距 */
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.number {
+    font-family: 'D-DIN Exp', sans-serif;
+    font-size: 5rem; /* 增加数字字号 */
+    font-weight: bold;
+    background: linear-gradient(45deg, #FFD700, #FFAA33);
+    -webkit-background-clip: text;
+    color: transparent;
+    padding: 1.5rem; /* 增加内边距 */
+    border-radius: 15px; /* 调整圆角 */
+    min-width: 120px; /* 调整最小宽度 */
+    display: inline-block;
+    position: relative;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 30px rgba(255, 215, 0, 0.7); /* 调整文字阴影 */
+    border: 1px solid rgba(255, 215, 0, 0.3); /* 添加边框 */
+    background-color: rgba(255, 255, 255, 0.05); /* 添加轻微背景色 */
+}
+
+.number:hover {
+    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.label {
+    font-size: 1.5rem; /* 增加标签字号 */
+    margin-top: 0.8rem; /* 调整上边距 */
+    color: rgba(255, 255, 255, 0.9); /* 调整标签颜色 */
+}
+
+.decorations {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem; /* 增加装饰之间的间距 */
+    margin-top: 2rem; /* 添加上边距 */
+}
+
+.lantern {
+    font-size: 4rem; /* 增加灯笼字号 */
+    animation: lanternFloat 3s infinite ease-in-out;
+    position: relative;
+    z-index: 1;
+    filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.5)); /* 调整阴影效果 */
+}
+
+.lantern.left {
+    animation-delay: -1s;
+}
+
+.message {
+    font-size: 3rem; /* 增加消息字号 */
+    font-weight: bold;
+    background: linear-gradient(45deg, #FFD700, #FFAA33);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.8); /* 调整文字阴影 */
+    position: relative;
+    z-index: 2;
+    animation: glitch 5s infinite;
+}
+
+@keyframes swing {
+    0%, 100% {
+        transform: rotate(-5deg);
+    }
+    50% {
+        transform: rotate(5deg);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 2rem;
+    }
+
+    .title {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .countdown-container {
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .countdown-item {
+        flex-basis: 45%; /* Allow items to wrap */
+    }
+    
+    .number {
+        font-size: 3.5rem;
+        min-width: unset; /* Remove min-width on small screens */
+        padding: 1rem;
+    }
+    
+    .label {
+        font-size: 1.2rem;
+        margin-top: 0.5rem;
+    }
+
+    .decorations {
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+    }
+
+    .lantern {
+        font-size: 3rem;
+    }
+
+    .message {
+        font-size: 2rem;
+    }
+}

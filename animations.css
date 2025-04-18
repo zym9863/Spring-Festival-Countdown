@@ -1,0 +1,93 @@
+/* 粒子动画系统 */
+@keyframes snowfall {
+    0% {
+        transform: translateY(-10vh) rotate(0deg);
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+
+/* 灯笼3D效果 */
+/* 灯笼3D效果 */
+@keyframes lanternFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(-7deg) translateZ(25px); /* 调整旋转和Z轴位移 */
+    }
+    50% {
+        transform: translateY(-15px) rotate(7deg) translateZ(0); /* 调整Y轴位移和旋转 */
+    }
+}
+
+/* 数字翻转动画 */
+@keyframes numberFlip {
+    0% {
+        transform: perspective(400px) rotateX(0);
+    }
+    100% {
+        transform: perspective(400px) rotateX(360deg);
+    }
+}
+
+/* 全息投影效果 */
+/* 全息投影效果 */
+@keyframes hologram {
+    0% {
+        box-shadow: 0 0 30px rgba(255, 215, 0, 0.2); /* 调整阴影 */
+    }
+    50% {
+        box-shadow: 0 0 50px rgba(255, 215, 0, 0.4); /* 调整阴影 */
+    }
+    100% {
+        box-shadow: 0 0 30px rgba(255, 215, 0, 0.2); /* 调整阴影 */
+    }
+}
+
+/* 金色涟漪动画 */
+@keyframes ripple {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.4);
+    }
+    100% {
+        box-shadow: 0 0 0 20px rgba(255, 215, 0, 0);
+    }
+}
+
+/* 故障艺术效果 */
+/* 故障艺术效果 */
+@keyframes glitch {
+    0% {
+        transform: translate(0);
+        opacity: 1;
+    }
+    20% {
+        transform: translate(-1px, 1px); /* 调整位移 */
+        opacity: 0.95; /* 调整透明度 */
+    }
+    40% {
+        transform: translate(-1px, -1px); /* 调整位移 */
+        opacity: 0.9; /* 调整透明度 */
+    }
+    60% {
+        transform: translate(1px, 1px); /* 调整位移 */
+        opacity: 0.95; /* 调整透明度 */
+    }
+    80% {
+        transform: translate(1px, -1px); /* 调整位移 */
+        opacity: 0.9; /* 调整透明度 */
+    }
+    100% {
+        transform: translate(0);
+        opacity: 1;
+    }
+}
+
+/* 祥云粒子效果 */
+@keyframes cloudFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
