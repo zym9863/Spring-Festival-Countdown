@@ -8,6 +8,103 @@
     }
 }
 
+/* 背景渐变动画 */
+@keyframes backgroundShift {
+    0%, 100% {
+        background-position: 0% 50%, 100% 50%, 50% 100%, 0% 0%;
+    }
+    25% {
+        background-position: 100% 0%, 0% 100%, 0% 0%, 100% 100%;
+    }
+    50% {
+        background-position: 50% 100%, 50% 0%, 100% 50%, 50% 50%;
+    }
+    75% {
+        background-position: 0% 100%, 100% 0%, 50% 50%, 0% 100%;
+    }
+}
+
+/* 容器浮动动画 */
+@keyframes containerFloat {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* 边框渐变动画 */
+@keyframes gradientBorder {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* 脉冲光晕动画 */
+@keyframes pulseGlow {
+    0%, 100% {
+        opacity: 0.3;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        opacity: 0.6;
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+}
+
+/* 标题渐变动画 */
+@keyframes titleGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* 标题浮动动画 */
+@keyframes titleFloat {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/* 数字渐变动画 */
+@keyframes numberGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* 边框渐变动画 */
+@keyframes borderGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
 /* 灯笼3D效果 */
 /* 灯笼3D效果 */
 @keyframes lanternFloat {
@@ -89,5 +186,74 @@
     }
     100% {
         background-position: 100% 50%;
+    }
+}
+
+/* 闪烁星星动画 */
+@keyframes sparkle {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(0.8) rotate(0deg);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2) rotate(180deg);
+    }
+}
+
+/* 消息渐变动画 */
+@keyframes messageGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* 消息边框动画 */
+@keyframes messageBorder {
+    0%, 100% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+}
+
+/* 花瓣飘动动画 */
+@keyframes petalFloat {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-10px) rotate(90deg);
+    }
+    50% {
+        transform: translateY(-5px) rotate(180deg);
+    }
+    75% {
+        transform: translateY(-15px) rotate(270deg);
+    }
+}
+
+/* 云朵飘动动画 */
+@keyframes cloudDrift {
+    0%, 100% {
+        transform: translateX(0px) translateY(0px);
+    }
+    25% {
+        transform: translateX(20px) translateY(-10px);
+    }
+    50% {
+        transform: translateX(-10px) translateY(-5px);
+    }
+    75% {
+        transform: translateX(15px) translateY(-8px);
     }
 }

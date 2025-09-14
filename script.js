@@ -4,24 +4,78 @@ const lunarNewYear = new Date('2026-01-29T00:00:00+08:00');
 // 创建粒子系统
 function createParticle() {
     const particle = document.createElement('div');
-    particle.className = 'particle';
+    const particleTypes = ['golden', 'star', 'snowflake', 'firework'];
+    const type = particleTypes[Math.floor(Math.random() * particleTypes.length)];
+    
+    particle.className = `particle ${type}`;
+    
+    const size = Math.random() * 15 + 8;
+    const left = Math.random() * 100;
+    const animationDuration = Math.random() * 4 + 3;
+    const opacity = Math.random() * 0.6 + 0.4;
+    
+    let particleContent = '';
+    let particleStyle = '';
+    
+    switch(type) {
+        case 'golden':
+            particleContent = '';
+            particleStyle = `
+                background: radial-gradient(circle at center, rgba(255,215,0,0.9), rgba(255,215,0,0.2));
+                border-radius: 50%;
+                box-shadow: 0 0 ${size}px rgba(255,215,0,0.5);
+            `;
+            break;
+        case 'star':
+            particleContent = '✨';
+            particleStyle = `
+                background: transparent;
+                color: #FFD700;
+                font-size: ${size}px;
+                text-shadow: 0 0 ${size}px rgba(255,215,0,0.8);
+            `;
+            break;
+        case 'snowflake':
+            particleContent = '❄';
+            particleStyle = `
+                background: transparent;
+                color: rgba(255,255,255,0.8);
+                font-size: ${size}px;
+                text-shadow: 0 0 ${size}px rgba(255,255,255,0.6);
+            `;
+            break;
+        case 'firework':
+            particleContent = '🎆';
+            particleStyle = `
+                background: transparent;
+                font-size: ${size}px;
+                filter: hue-rotate(${Math.random() * 360}deg);
+            `;
+            break;
+    }
+    
+    particle.innerHTML = particleContent;
     particle.style.cssText = `
         position: absolute;
-        width: ${Math.random() * 20 + 10}px;
-        height: ${Math.random() * 20 + 10}px;
-        background: radial-gradient(circle at center, rgba(255,215,0,0.8), rgba(255,215,0,0));
-        border-radius: 50%;
-        left: ${Math.random() * 100}vw;
-        top: -20px;
-        animation: snowfall ${Math.random() * 3 + 2}s linear infinite;
-        opacity: ${Math.random() * 0.5 + 0.3};
+        width: ${size}px;
+        height: ${size}px;
+        left: ${left}vw;
+        top: -30px;
+        animation: snowfall ${animationDuration}s linear infinite;
+        opacity: ${opacity};
+        pointer-events: none;
+        z-index: 1;
+        ${particleStyle}
     `;
+    
     document.getElementById('particles-container').appendChild(particle);
     
     // 移除超出视口的粒子
     setTimeout(() => {
-        particle.remove();
-    }, 5000);
+        if (particle.parentNode) {
+            particle.remove();
+        }
+    }, animationDuration * 1000 + 1000);
 }
 
 // 定期创建新粒子
